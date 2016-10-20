@@ -7,21 +7,40 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
+
+
 </head>
 
 <body ng-app="myApp" ng-controller="MainController as main">
 
     <div>
-        <button  ng-click="main.getGiphy()">Random</button>
-
+        <button ng-click="main.getGiphy()">Random</button>
         <!-- //ng-model="main.random" -->
-<p >
-<img ng-value = 'random.id'  ng-src = '{{main.randomImage.image_url}}'/>
+        <p>
+            <!-- ng-value = 'random.id' -->
+            <img ng-src='{{main.randomImage.image_url}}' />
+            <!-- ng-value Binds the given expression to the value of the element; it mainly used on input and option elements -->
+            <!-- main in the variable declared in the controller -->
+            <!-- main.randomImage = response.data.data -->
+            <!-- //ng-src with with link angular to fill that -->
+            {{main.randomImage.url}}
 
-  <!-- //ng-src with with link angular to fill that -->
-  {{randomImage.image_url}}
+        </p>
 
-</p>
+
+        <form>
+            <input type="text" ng-value = "main.query" ng-model = "main.query"/> {{main.query}}
+            <button ng-click="main.searchGiphy()">Search</button>
+            <!--<img ng-value = "image.url">{{image.images.downsized_large.url}}-->
+            <img ng-src='{{image.images.downsized_large.url}}' ng-repeat="image in main.searchImage track by $index" />
+            </option>
+
+            {{image.images.downsized_large.url}}
+        </form>
+
+        <p>
+
+        </p>
     </div>
 
 </body>
