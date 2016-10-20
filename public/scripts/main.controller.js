@@ -1,19 +1,20 @@
 console.log('inside main controller.js');
-
+//myApp defined in module.js and ng-App
 angular.module('myApp')
-.controller('MainController', MainController);
+.controller('MainController', MainController); //controller name defined in ng-controller
 
-//pass in service instead of $http  giphy. wherever you want to call it
+//pass in service instead of $http  //giphy is the service; defined in giphy.service.js
 function MainController(giphy) {
     var main = this;
     main.randomImage = {};
 
     main.searchImage = [];
 
-    //$http get calls
+    //move $http get calls and call them here
     //whatever the name of your service file is
+
     main.getGiphy = function() {
-        //console.log('inside getGiphy function');
+        //giphy refers to giphy.service.js
         giphy.getGiphy()
         //response will be promise; response gets passed into then
             .then(function(giphyresponse) {
@@ -24,12 +25,12 @@ function MainController(giphy) {
             });
     }; //end of getGiphy
 
-    main.searchGiphy = function(response) {
+    main.searchGiphy = function() {
       //getting passed on search giphy
-        giphy.searchGiphy(response)
-            .then(function(response) {
-                console.log('response', response);
-                main.searchImage = response;
+        giphy.searchGiphy(main.query)
+            .then(function(searchImage) {
+                //console.log('response', response);
+                main.query = searchImage;
             });
     }; //end of searchGiphy
 } //end MainController
