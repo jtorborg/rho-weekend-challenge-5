@@ -34,15 +34,18 @@
         </p>
 
 
-
+<fieldset>
             <input type="text" ng-model = "main.query"/>
             <button ng-click="main.searchGiphy()">Search</button>
             <!-- <img ng-src='{{image.images.downsized_large.url}}' ng-repeat="image in main.query track by $index" /> -->
-            <img ng-src='{{main.query[0].images.downsized_large.url}}'/>
+            <img ng-src='{{main.query[0].images.downsized_large.url}}' ng-model = "main.query[0].images.downsized_large.url"/>
             <!-- add second parameter with comments -->
             <!-- add text input field; ng-model (access that variable some how) results with be second parameter you don't need to create object on controller -->
-            <button ng-click="main.saveGiphy(main.query[0].images.downsized_large.url)">Favorite</button>
+            <input type="text" ng-model = "main.comments"/>
+            <button ng-click="main.saveGiphy(main.comments, main.query[0].images.downsized_large.url)">Favorite</button>
+            <!-- <button ng-click="main.saveGiphy(main.comments, main.query[0].images.downsized_large.url)">Favorite</button> -->
 
+</fieldset>
 <!-- click function to increment index -->
         <ng-view>
 Placeholder.
