@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-route.min.js"></script>
     <script src="scripts/module.js" charset="utf-8"></script>
     <script src="scripts/main.controller.js" charset="utf-8"></script>
     <script src="scripts/giphy.service.js" charset="utf-8"></script>
@@ -26,21 +27,26 @@
             <!-- main in the variable declared in the controller -->
             <!-- main.randomImage = response.data.data -->
             <!-- //ng-src with with link angular to fill that -->
+
+
             {{main.randomImage.url}}
 
         </p>
 
 
-        <form>
-            <input type="text" ng-value = "main.query" ng-model = "main.query"/> 
+
+            <input type="text" ng-model = "main.query"/>
             <button ng-click="main.searchGiphy()">Search</button>
-            <img ng-src='{{image.images.downsized_large.url}}' ng-repeat="image in main.query track by $index" />
-            </option>
-        </form>
+            <!-- <img ng-src='{{image.images.downsized_large.url}}' ng-repeat="image in main.query track by $index" /> -->
+            <img ng-src='{{main.query[0].images.downsized_large.url}}'/>
+            <!-- add second parameter with comments -->
+            <!-- add text input field; ng-model (access that variable some how) results with be second parameter you don't need to create object on controller -->
+            <button ng-click="main.saveGiphy(main.query[0].images.downsized_large.url)">Favorite</button>
 
-        <p>
-
-        </p>
+<!-- click function to increment index -->
+        <ng-view>
+Placeholder.
+        </ng-view>
     </div>
 
 </body>
