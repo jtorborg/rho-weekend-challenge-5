@@ -40,6 +40,32 @@ router.post('/', function(req, res) {
 
 }); //end of router post
 
+router.get('/', function(req, res){
+
+    pool.connect(function(err, client, done){
+        if(err){
+            console.log('Error connecting to the DB', err);
+            res.sendStatus(500);
+            done();
+            return;
+        }
+
+        client.query('SELECT * FROM favorites', function(err, result){
+            done();
+            if(err){
+                console.log('Error querying the DB', err);
+                res.sendStatus(500);
+
+                return;
+            }
+
+        console.log('Got rows from the DB:',result.rows);
+        res.send(result.rows);
+
+        });
+
+    });
+});
 
 
 

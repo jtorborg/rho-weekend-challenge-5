@@ -41,7 +41,7 @@ function giphyService($http) {//pass in built-in $http; this is a privately scop
 
                 return response.data.data;
             });
-    }
+    }//end this searchGiphy
 
 
     this.saveGiphy = function(favorites) {//pass your data!!!
@@ -63,5 +63,19 @@ function giphyService($http) {//pass in built-in $http; this is a privately scop
              });
 
     //create your unique ; create a search form; package up that text and your id into an object
-  } //end of searchGiphy
+  } //end of saveGiphy
+
+
+      this.faveGiphy = function() {
+              return $http.get('/favoriteroute')
+                  .then(function(response) {
+                      console.log('response from faveGiphy', response);
+                      return response.data.data;
+                  });
+          }//end faveServiceGiphy
+
+
+
+
+
 }//end of giphyService
