@@ -5,12 +5,15 @@
 <button class = "btn btn-default"   ng-click="favorite.faveGiphy()">Display my gifs!</button>
 <p class = "favorite-comments">
   {{favorite.comments}}
+  {{favorite.pic}}
+
 
 </p>
-
-<img id = "favorite-image" ng-src='{{favorite.pic}}' ng-model = "favorite.pic"/>
-
-<!-- <img ng-src='{{  }}' ng-repeat="image in     track by $index" /> -->
+<div ng-repeat="image in favorite.array track by $index">
 
 
+<img id = "favorite-image" ng-src='{{image.pic}}'  />
+
+<span>{{image.comments}}</span>
+</div>
 </body>

@@ -5,9 +5,12 @@ angular.module('myApp') //registered
 
 function FavoriteController(giphy) {
 
-console.log('inside Favorite Controller function');
+//console.log('inside Favorite Controller function');
 
 var favorite = this;
+favorite.object = {};
+favorite.array = [];
+
 
 favorite.faveGiphy = function() { //function available to controller and on the DOM
 
@@ -22,10 +25,15 @@ console.log('inside faveGiphy');
     //         //returning response once it is run
 console.log("response received in favorite controller", response);
 console.log("response received in favorite controller data", response.data);
-console.log("response received in favorite controller ", response.data[28].comments);
-console.log("response received in favorite controller ", response.data[28].pic);
-favorite.comments = response.data[28].comments;
-favorite.pic = response.data[28].pic;
+// favorite.comments = response.data.comments;
+// console.log('response.data.comments', response.data.comments);
+// favorite.pic = response.data.pic;
+// console.log('response.data.pic', response.data.pic);
+
+favorite.object = response.object;
+favorite.array = response.data;
+console.log("favorite array", favorite.array);
+
 
 
          });
