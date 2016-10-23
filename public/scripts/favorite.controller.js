@@ -33,6 +33,8 @@ console.log("response received in favorite controller data", response.data);
 favorite.object = response.object;
 favorite.array = response.data;
 console.log("favorite array", favorite.array);
+console.log("favorite array length", favorite.array.length);
+
 
 
 

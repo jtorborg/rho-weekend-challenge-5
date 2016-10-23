@@ -1,6 +1,7 @@
 <body>
 
 <h1>Favorite</h1>
+<span ng-model = "favorite.array.length">{{favorite.array.length}}</span>
 
 <button class = "btn btn-default"   ng-click="favorite.faveGiphy()">Display my gifs!</button>
 <p class = "favorite-comments">
@@ -14,6 +15,6 @@
 
 <img id = "favorite-image" ng-src='{{image.pic}}'  />
 
-<span>{{image.comments}}</span>
+<span id = 'image-comments'>{{image.comments}}</span>
 </div>
 </body>
