@@ -43,12 +43,12 @@ function MainController(giphy) {
             });
     }; //end of searchGiphy
 
-    main.saveGiphy = function(comment, pic) { //input is a placeholder
+    main.saveGiphy = function(comments, pic) { //input is a placeholder
         //getting passed on search giphy
         //main.query matches what is on html
         // console.log("comments", comments);
         // console.log("pic", pic);
-        main.favorites ={comment:comment,pic:pic};/////!!!!@@@###$$%%
+        main.favorites ={comments:comments,pic:pic};/////!!!!@@@###$$%%//must match database columns
         main.favoriteCount++;
         console.log(main.favorites);
         giphy.saveGiphy(main.favorites)

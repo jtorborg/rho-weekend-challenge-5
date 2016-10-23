@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp" >
 
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Chewy|Lato" rel="stylesheet">    <link rel="stylesheet" href="styles/styles.css">
     <script src="vendor/angular.min.js"></script>
     <script src="vendor/angular-route.min.js"></script>
     <script src="scripts/module.js" charset="utf-8"></script>
+
+    <script src="scripts/app.config.js" charset="utf-8"></script>
+
     <script src="scripts/main.controller.js" charset="utf-8"></script>
+    <script src="scripts/favorite.controller.js" charset="utf-8"></script>
+
     <script src="scripts/giphy.service.js" charset="utf-8"></script>
 
 
+    <base href="/" />
 
 </head>
 
-<body ng-app="myApp" ng-controller="MainController as main">
+<body ng-controller="MainController as main">
+  <div id= "favoriteDiv">
+    <a id = "favoriteFavorite" href="/favorite">Favorite</a> <span>0</span>
 
+  </div>
+
+<h1>Gifs gifs gifs</h1>
     <div>
-        <button ng-click="main.getGiphy()">Random</button>
+        <button class = "btn btn-default"   ng-click="main.getGiphy()">I want a random gif!</button>
         <!-- //ng-model="main.random" -->
         <p>
             <!-- ng-value = 'random.id' -->
-            <img ng-src='{{main.randomImage.image_url}}' />
+            <img id = "random-image" ng-src='{{main.randomImage.image_url}}' />
             <!-- ng-value Binds the given expression to the value of the element; it mainly used on input and option elements -->
             <!-- main in the variable declared in the controller -->
             <!-- main.randomImage = response.data.data -->
@@ -35,20 +48,26 @@
 
 
 <fieldset>
-            <input type="text" ng-model = "main.query"/>
-            <button ng-click="main.searchGiphy()">Search</button>
+  <h1>Get another gif</h1>
+
+            <input type="text" class = "form-control"  placeholder = "text"  ng-model = "main.query"/>
+            <button  class = "btn btn-default" ng-click="main.searchGiphy()">Search</button>
             <!-- <img ng-src='{{image.images.downsized_large.url}}' ng-repeat="image in main.query track by $index" /> -->
-            <img ng-src='{{main.query[0].images.downsized_large.url}}' ng-model = "main.query[0].images.downsized_large.url"/>
+            <img id = "searched-image" ng-src='{{main.query[0].images.downsized_large.url}}' ng-model = "main.query[0].images.downsized_large.url"/>
             <!-- add second parameter with comments -->
             <!-- add text input field; ng-model (access that variable some how) results with be second parameter you don't need to create object on controller -->
-            <input type="text" ng-model = "main.comments"/>
-            <button ng-click="main.saveGiphy(main.comments, main.query[0].images.downsized_large.url)">Favorite</button>
+            <input  type="text" class = "form-control" placeholder = "Comment here"  ng-model = "main.comments"/>
+            <button class = "btn btn-default" ng-click="main.saveGiphy(main.comments, main.query[0].images.downsized_large.url)">Favorite this Gif</button>
             <!-- <button ng-click="main.saveGiphy(main.comments, main.query[0].images.downsized_large.url)">Favorite</button> -->
 
 </fieldset>
 <!-- click function to increment index -->
+
+<a href="/home">Home</a>
         <ng-view>
-Placeholder.
+<p>
+  Placeholder.
+</p>
         </ng-view>
     </div>
 
