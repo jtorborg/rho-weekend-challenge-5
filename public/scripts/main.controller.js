@@ -54,6 +54,11 @@ function MainController(giphy) {
         giphy.saveGiphy(main.favorites)
             .then(function(response) {
 console.log('response', response);
+console.log('response.data', response.data);
+console.log('response.data[0].comments', response.data[0].comments);
+console.log('response.data[0].pic', response.data[0].pic);
+
+
 
             //remove .then because there is not http request; can only execute when a promise is fulfilled or created; waiting function
 

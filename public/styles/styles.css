@@ -22,6 +22,10 @@ h1 {
     height: 208px;
 }
 
+#favorite-image {
+    height: 208px;
+}
+
 #favoriteDiv {
     background-color: #6ed3cf;
 }

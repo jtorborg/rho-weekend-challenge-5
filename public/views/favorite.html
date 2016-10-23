@@ -3,6 +3,14 @@
 <h1>Favorite</h1>
 
 <button class = "btn btn-default"   ng-click="favorite.faveGiphy()">Display my gifs!</button>
+<p class = "favorite-comments">
+  {{favorite.comments}}
+
+</p>
+
+<img id = "favorite-image" ng-src='{{favorite.pic}}' ng-model = "favorite.pic"/>
+
+<!-- <img ng-src='{{  }}' ng-repeat="image in     track by $index" /> -->
 
 
 </body>

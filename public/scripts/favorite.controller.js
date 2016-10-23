@@ -21,6 +21,13 @@ console.log('inside faveGiphy');
     //         favorite.randomImage = giphyresponse;
     //         //returning response once it is run
 console.log("response received in favorite controller", response);
+console.log("response received in favorite controller data", response.data);
+console.log("response received in favorite controller ", response.data[28].comments);
+console.log("response received in favorite controller ", response.data[28].pic);
+favorite.comments = response.data[28].comments;
+favorite.pic = response.data[28].pic;
+
+
          });
 }; //end of getGiphy
 

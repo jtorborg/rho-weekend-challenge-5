@@ -70,7 +70,7 @@ function giphyService($http) {//pass in built-in $http; this is a privately scop
               return $http.get('/favoriteroute')
                   .then(function(response) {
                       console.log('response from faveGiphy', response);
-                      return response.data.data;
+                      return response;
                   });
           }//end faveServiceGiphy
 
