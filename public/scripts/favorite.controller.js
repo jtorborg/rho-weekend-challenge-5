@@ -39,6 +39,7 @@ console.log("favorite array length", favorite.array.length);
 
 
          });
+         
+//data-ng init = "function"
 }; //end of getGiphy
-
 } //FavoriteController

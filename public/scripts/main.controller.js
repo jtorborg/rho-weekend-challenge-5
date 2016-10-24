@@ -49,7 +49,6 @@ function MainController(giphy) {
         // console.log("comments", comments);
         // console.log("pic", pic);
         main.favorites ={comments:comments,pic:pic};/////!!!!@@@###$$%%//must match database columns
-        main.favoriteCount++;
         console.log(main.favorites);
         giphy.saveGiphy(main.favorites)
             .then(function(response) {

@@ -20,14 +20,22 @@ h1 {
 
 #searched-image {
     height: 208px;
+    width: 325px;
+
 }
 
 #favorite-image {
     height: 208px;
+    width: 325px;
+    display: inline;
+    position: relative;
+
 }
 
 #favoriteDiv {
     background-color: #6ed3cf;
+    display: inline;
+
 }
 
 span {
@@ -38,8 +46,31 @@ span {
 }
 
 #favoriteFavorite {
-
   background-color: #6ed3cf;
-  text-align: right;
+  text-align: center;
+  display: block;
+}
+
+#home-href {
+  background-color: #6ed3cf;
+  text-align: center;
+  display: block;
+}
+
+#favoritesdiv {
+
+  height: 208px;
+  width: 325px;
+display: inline;
+}
+
+button {
+
+text-align: center;
+
+}
+#image-comments {
+
+display: inline;
 
 }

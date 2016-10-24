@@ -5,15 +5,9 @@ angular.module('myApp').service('giphy', giphyService);
 
 //these are privately scoped variables; they would need to publically scope it if you wanted to access outside of service
 
-
-
 var main = this;
 
-
-
-
 var API = 'http://api.giphy.com/v1/gifs/';
-
 
 var key = '=dc6zaTOxFJmzC';
 var random = 'random?api_key';
@@ -45,20 +39,9 @@ function giphyService($http) {//pass in built-in $http; this is a privately scop
 
 
     this.saveGiphy = function(favorites) {//pass your data!!!
-
-//console.log("mainComments", mainComments);
-
-
     //send post to route; route will send to database
          return $http.post('/favoriteroute', favorites)
              .then(function(favorites) {
-               //console.log('mainComments', mainComments);
-
-              //  console.log('comments', comments);
-              //  console.log('pic', pic);
-
-                //  console.log('response', gifQuery);
-                //  console.log('response', gifComments);
                  return favorites;  //!!!!!!!!!!
              });
 
@@ -73,9 +56,6 @@ function giphyService($http) {//pass in built-in $http; this is a privately scop
                       return response;
                   });
           }//end faveServiceGiphy
-
-
-
 
 
 }//end of giphyService

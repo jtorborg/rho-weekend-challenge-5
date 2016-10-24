@@ -1,20 +1,16 @@
-<body>
+<div data-ng-init = "favorite.faveGiphy()">
+
+
+<span ng-model="favorite.array.length">Favorite count: {{favorite.array.length}}</span>
 
 <h1>Favorite</h1>
-<span ng-model = "favorite.array.length">{{favorite.array.length}}</span>
-
-<button class = "btn btn-default"   ng-click="favorite.faveGiphy()">Display my gifs!</button>
-<p class = "favorite-comments">
-  {{favorite.comments}}
-  {{favorite.pic}}
 
 
+<p class="favorite-comments">
 </p>
-<div ng-repeat="image in favorite.array track by $index">
 
-
-<img id = "favorite-image" ng-src='{{image.pic}}'  />
-
-<span id = 'image-comments'>{{image.comments}}</span>
+<div id="favoritesdiv" ng-repeat="image in favorite.array track by $index">
+    <img id="favorite-image" ng-src='{{image.pic}}' />
+    <p id='image-comments'>{{image.comments}}</p>
 </div>
-</body>
+</div>
